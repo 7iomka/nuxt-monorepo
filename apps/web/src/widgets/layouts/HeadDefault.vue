@@ -37,7 +37,7 @@
   <Meta name="theme-color" content="#ffffff" />
 
   <!-- preload fonts -->
-  <Link
+  <!-- <Link
     rel="preload"
     href="/static/fonts/ibm-plex-sans/ibm-plex-sans-v19-cyrillic-ext_latin-ext-700.woff2"
     as="font"
@@ -50,7 +50,7 @@
     as="font"
     type="font/woff2"
     cross-origin="anonymous"
-  />
+  /> -->
 
   <Style
     type="text/css"
