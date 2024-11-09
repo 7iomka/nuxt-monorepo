@@ -7,6 +7,9 @@
     "dev": "tsx watch src/index.ts",
     "build": "tsc && tsc-alias",
     "start": "node dist/index.js",
+    "build:watch": "tsc -w | tsc-alias -w",
+    "server:watch": "node --watch dist/index.js | npx pino-pretty",
+    "start:watch": "npm-run-all -p build:watch server:watch",
     "check-updates": "pnpm dlx npm-check-updates -u"
   },
   "dependencies": {
@@ -26,6 +29,7 @@
     "fastify-plugin": "^5.0.1",
     "fastify-type-provider-zod": "^4.0.2",
     "keyv": "^5.1.3",
+    "npm-run-all": "^4.1.5",
     "pino-pretty": "^12.1.0",
     "postgres": "^3.4.5",
     "zod": "^3.23.8"
