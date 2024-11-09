@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "mishannn.vscode-file-suggest",
+    "asbjornh.vscode-module-templates",
+    "bradlc.vscode-tailwindcss",
+    "Vue.volar",
+  ]
+}

@@ -1,0 +1,1 @@
+export { default as {{pascal name}} } from './{{pascal name}}.vue';

@@ -1,0 +1,2 @@
+export { factory as create{{pascal name}}Model } from './{{kebab name}}.model';
+export { Create{{pascal name}}Component } from './{{kebab name}}.component';

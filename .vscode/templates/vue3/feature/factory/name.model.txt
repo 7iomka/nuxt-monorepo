@@ -1,0 +1,10 @@
+import { createFactory } from '@withease/factories';
+import { createModelView } from '@/shared/lib/factory';
+
+interface FactoryOptions {}
+
+export const factory = createFactory((options: FactoryOptions) => {
+  return {};
+});
+
+export const { modelView, useModel } = createModelView(factory);

@@ -1,0 +1,14 @@
+<script lang="ts" setup>
+  import type { HTMLAttributes } from 'vue';
+  import { cn } from '@/shared/lib/cn';
+
+  export interface {{pascal name}}Props {
+    class?: HTMLAttributes['class'];
+  }
+
+  const props = defineProps<{{pascal name}}Props>();
+</script>
+
+<template>
+  <div :class="cn(props.class)"></div>
+</template>

@@ -1,0 +1,23 @@
+{
+  "semi": true,
+  "trailingComma": "all",
+  "singleQuote": true,
+  "printWidth": 80,
+  "tabWidth": 2,
+  "arrowParens": "always",
+  "endOfLine": "lf",
+  "useTabs": false,
+  "vueIndentScriptAndStyle": true,
+  "plugins": ["prettier-plugin-classnames"],
+  "customFunctions": ["cn", "cva", "clsx"],
+  "customAttributes": ["classes", "classNames", "active-class"],
+  "endingPosition": "absolute-with-indent",
+  "overrides": [
+    {
+      "files": "*.{css,scss}",
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ]
+}

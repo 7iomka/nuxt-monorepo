@@ -1,0 +1,20 @@
+{
+"Pinia Setup Store Boilerplate": {
+    "scope": "javascript,typescript",
+    "prefix": "pinia-setup",
+    "body": [
+      "import { defineStore, acceptHMRUpdate } from 'pinia'",
+      "",
+      "export const use${TM_FILENAME_BASE/^(.*)$/${1:/pascalcase}/} = defineStore('$TM_FILENAME_BASE', () => {",
+      "\t$0",
+      "\treturn {}",
+      "})",
+      "",
+      "if (import.meta.hot) {",
+      "\timport.meta.hot.accept(acceptHMRUpdate(use${TM_FILENAME_BASE/^(.*)$/${1:/pascalcase}/}, import.meta.hot))",
+      "}",
+      ""
+    ],
+    "description": "Bootstrap the code needed for a Vue.js Pinia Setup Model (pinia store) file"
+  }
+}

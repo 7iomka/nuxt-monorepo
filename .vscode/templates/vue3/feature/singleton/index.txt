@@ -1,0 +1,1 @@
+export { $${{camel name}} } from './{{kebab name}}.model';

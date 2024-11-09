@@ -1,0 +1,68 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.preferences.preferTypeOnlyAutoImports": true,
+  "typescript.preferences.importModuleSpecifier": "shortest",
+  // enable ESLint to fix tailwind classes on save
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.markdownlint": "always",
+    // "source.organizeImports": "never"
+  },
+  "editor.formatOnSave": true,
+  // optional: if you want to use the new flat config format
+  "eslint.useFlatConfig": true,
+  "eslint.validate": [
+    "vue",
+    // "javascript",
+    // "javascriptreact",
+    // "typescript",
+    // "typescriptreact",
+    // "vue",
+    // "html",
+    // "markdown",
+    // "json",
+    // "jsonc",
+    // "yaml",
+    // "toml"
+  ],
+  "eslint.format.enable": true,
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "classNames",
+    "classes",
+    "active-class",
+  ],
+  "tailwindCSS.experimental.classRegex": [
+    ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+    ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    // add object support like classNames={{ bg: 'some-class' }}
+    // for vue (classes, classNames)
+    ["classes\\s*:\\s*{[^}]*?\\b([^:]*?)\\b[^:]*:\\s*['\"]([^'\"]*)['\"]", ""],
+    ["classNames\\s*:\\s*{[^}]*?\\b([^:]*?)\\b[^:]*:\\s*['\"]([^'\"]*)['\"]", ""],
+    // for react (classNames)
+    ["classNames\\s*={{[^}]*?\\b([^:]*?)\\b[^:]*:\\s*['\"]([^'\"]*)['\"]", ""]
+  ],
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "iconify.customCollectionJsonPaths": [
+
+    "./src/shared/config/icon-sets/logos-ext/icons.json",
+    "./src/shared/config/icon-sets/skill-icons-ext/icons.json",
+  ],
+  "iconify.delimiters": ["--"],
+  "iconify.prefixes": [""],
+  "iconify.inplace": false,
+  "iconify.annotations": true,
+  "module-templates.templateFiles": ["./templates/vue3/.module-templates.json"],
+  "module-templates.engine": "handlebars",
+  "ai-commit.AI_COMMIT_LANGUAGE": "en",
+  "ai-commit.OPENAI_API_KEY": "sk-b67U1nNs4j9nPDDjynorsHOlJiAKuzrbUWc4VbhQC7VQ5nTa",
+  "ai-commit.OPENAI_BASE_URL": "https://api.chatanywhere.tech",
+  "[markdown]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
+},
+}

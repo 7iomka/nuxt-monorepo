@@ -1,0 +1,103 @@
+{
+  "nuxt-page": {
+    "displayName": "Nuxt page",
+    "defaultPath": "src/app/pages",
+    "questions": {
+      "name": "Page name [kebab case]"
+    },
+    "files": [
+      {
+        "open": true,
+        "name": "{{name}}.vue",
+        "contentFile": "./nuxt-page/name.txt"
+      }
+    ]
+  },
+  "page": {
+    "displayName": "Page source",
+    "defaultPath": "src/pages",
+    "questions": {
+      "name": "Page name"
+    },
+    "folder": "{{kebab name}}",
+    "files": [
+      {
+        "open": true,
+        "name": "{{pascal name}}Page.vue",
+        "contentFile": "./page/NamePage.txt"
+      },
+      {
+        "name": "index.ts",
+        "contentFile": "./page/index.txt"
+      }
+    ]
+  },
+  "widget": {
+    "displayName": "Widget",
+    "defaultPath": "src/widgets",
+    "questions": {
+      "name": "Widget name"
+    },
+    "folder": "{{kebab name}}",
+    "files": [
+      {
+        "open": true,
+        "name": "{{pascal name}}.vue",
+        "contentFile": "./widget/name.txt"
+      },
+      {
+        "name": "index.ts",
+        "contentFile": "./widget/index.txt"
+      }
+    ]
+  },
+  "entity": {
+    "displayName": "Entity",
+    "defaultPath": "src/entities",
+    "questions": {
+      "name": "Entity name"
+    },
+    "folder": "{{kebab name}}",
+    "files": [
+      {
+        "name": "{{kebab name}}.model.ts",
+        "contentFile": "./entity/name.model.txt"
+      },
+      {
+        "name": "{{kebab name}}.lib.ts",
+        "contentFile": "./entity/name.lib.txt"
+      },
+      {
+        "name": "{{kebab name}}.data.ts",
+        "contentFile": "./entity/name.data.txt"
+      },
+      {
+        "name": "{{kebab name}}.types.ts",
+        "contentFile": "./entity/name.types.txt"
+      },
+      {
+        "name": "index.ts",
+        "contentFile": "./entity/index.txt"
+      }
+    ]
+  },
+  "ui-component": {
+    "displayName": "UI component",
+    "defaultPath": "src/shared/ui",
+    "questions": {
+      "name": "UI component name"
+    },
+    "folder": "{{kebab name}}",
+    "files": [
+      {
+        "open": true,
+        "name": "{{pascal name}}.vue",
+        "contentFile": "./ui-component/name.txt"
+      },
+      {
+        "name": "index.ts",
+        "contentFile": "./ui-component/index.txt"
+      }
+    ]
+  }
+}

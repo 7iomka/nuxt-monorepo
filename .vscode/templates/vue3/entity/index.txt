@@ -1,0 +1,3 @@
+export { {{camel name}}Model } from './{{kebab name}}.model';
+export * from './{{kebab name}}.lib';
+export * from './{{kebab name}}.types';

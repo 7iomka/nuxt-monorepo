@@ -1,0 +1,19 @@
+import { createView } from '@/shared/lib/view';
+import { factory, useModel, modelView } from './{{kebab name}}.model';
+
+interface Create{{pascal name}}ComponentProps {
+  className?: string;
+}
+
+const Create{{pascal name}}Component = modelView(
+  factory,
+  ({ className }: Create{{pascal name}}ComponentProps) => {
+    const model = useModel();
+
+    return <div className={className}>content</div>;
+  },
+);
+
+export type { Create{{pascal name}}ComponentProps };
+export { Create{{pascal name}}Component };
+
