@@ -1,7 +1,6 @@
 import fastify, { type FastifyServerOptions } from 'fastify';
 import cors from '@fastify/cors';
-import cookie from '@fastify/cookie';
-// import { userRoutes } from '@/routes/user';
+import { usersRoutes } from '@/modules/users/users.routes';
 import { appConfig } from './app-config';
 import {
   serializerCompiler,
@@ -18,11 +17,11 @@ export const buildApp = (opts: AppOptions = {}) => {
   app.setSerializerCompiler(serializerCompiler);
 
   app.register(cors, {
-    origin: appConfig.corsOrigin,
+    origin: [appConfig.corsOrigin],
     credentials: true,
   });
 
-  // app.register(userRoutes, { prefix: '/user' });
+  app.register(usersRoutes, { prefix: '/users' });
 
   return app;
 };
