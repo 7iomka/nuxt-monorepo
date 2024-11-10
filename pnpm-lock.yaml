@@ -50,6 +50,9 @@ importers:
       '@keyv/valkey':
         specifier: ^1.0.0
         version: 1.0.0
+      '@scalar/fastify-api-reference':
+        specifier: ^1.25.60
+        version: 1.25.60
       argon2:
         specifier: ^0.41.1
         version: 0.41.1
@@ -1575,6 +1578,18 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@scalar/fastify-api-reference@1.25.60':
+    resolution: {integrity: sha512-/NErU9kS7Nh5sRi0ENMpde8DfL8mwkP4Sw1bFnzT6V9iHLrZXCS0NmWmAHSCm0M5CYjOS6DZQeoM5UVmtLHiRw==}
+    engines: {node: '>=18'}
+
+  '@scalar/openapi-types@0.1.5':
+    resolution: {integrity: sha512-6geH9ehvQ/sG/xUyy3e0lyOw3BaY5s6nn22wHjEJhcobdmWyFER0O6m7AU0ZN4QTjle/gYvFJOjj552l/rsNSw==}
+    engines: {node: '>=18'}
+
+  '@scalar/types@0.0.19':
+    resolution: {integrity: sha512-wOxtXd35BS0DaVhBopQUB8c8hfLQ+/PKEr99GbOZW+4DWCrEB8JfWJgvpJyxHU6by7LHNVY4fvpFQR7Ezh1IIw==}
+    engines: {node: '>=18'}
+
   '@sinclair/typebox@0.27.8':
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
 
@@ -3099,6 +3114,9 @@ packages:
   fastfall@1.5.1:
     resolution: {integrity: sha512-KH6p+Z8AKPXnmA7+Iz2Lh8ARCMr+8WNPVludm1LGkZoD2MjY6LVnRMtTKhkdzI+jr0RzQWXKzKyBJm1zoHEL4Q==}
     engines: {node: '>=0.10.0'}
+
+  fastify-plugin@4.5.1:
+    resolution: {integrity: sha512-stRHYGeuqpEZTL1Ef0Ovr2ltazUT9g844X5z/zEBFLG8RYlpDiOCIG+ATvYEp+/zmc7sN29mcIMp8gvYplYPIQ==}
 
   fastify-plugin@5.0.1:
     resolution: {integrity: sha512-HCxs+YnRaWzCl+cWRYFnHmeRFyR5GVnJTAaCJQiYzQSDwK9MgJdyAsuL3nh0EWRCYMgQ5MeziymvmAhUHYHDUQ==}
@@ -7346,6 +7364,18 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.24.3':
     optional: true
 
+  '@scalar/fastify-api-reference@1.25.60':
+    dependencies:
+      '@scalar/types': 0.0.19
+      fastify-plugin: 4.5.1
+
+  '@scalar/openapi-types@0.1.5': {}
+
+  '@scalar/types@0.0.19':
+    dependencies:
+      '@scalar/openapi-types': 0.1.5
+      '@unhead/schema': 1.11.10
+
   '@sinclair/typebox@0.27.8': {}
 
   '@sindresorhus/merge-streams@2.3.0': {}
@@ -9170,6 +9200,8 @@ snapshots:
   fastfall@1.5.1:
     dependencies:
       reusify: 1.0.4
+
+  fastify-plugin@4.5.1: {}
 
   fastify-plugin@5.0.1: {}
 

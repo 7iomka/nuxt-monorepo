@@ -8,7 +8,7 @@ const appOptions: FastifyServerOptions = {
   loggerInstance: logger,
 };
 
-const app = buildApp(appOptions);
+const app = await buildApp(appOptions);
 
 await app.listen({ port: appConfig.serverPort, host: '0.0.0.0' });
 
