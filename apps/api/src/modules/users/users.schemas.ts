@@ -1,26 +1,32 @@
 import { z } from 'zod';
 
-// Define user schema
-export const userSchema = z.object({
+/** User data */
+const UserDataSchema = z.object({
   id: z.number().int(),
   email: z.string().email(),
   name: z.string(),
 });
+export type UserData = z.infer<typeof UserDataSchema>;
 
-export type User = z.infer<typeof userSchema>;
+/** Get user by ID */
+export const GetUserByIdParamsSchema = z.object({
+  id: z.coerce.number().int(),
+});
+export type GetUserByIdParams = z.infer<typeof GetUserByIdParamsSchema>;
+export const GetUserByIdBodySchema = UserDataSchema;
+export type GetUserByIdBody = z.infer<typeof GetUserByIdBodySchema>;
+export const GetUserByIdResponseSchema = UserDataSchema;
+export type GetUserByIdResponse = z.infer<typeof GetUserByIdResponseSchema>;
 
-// Define user list schema
-export const userListSchema = z.object({
-  items: z.array(userSchema),
+/** Get users */
+export const GetUsersQuerySchema = z.object({
+  limit: z.coerce.number().int().nonnegative().default(10),
+  skip: z.coerce.number().int().nonnegative().default(0),
+});
+export const GetUsersResponseSchema = z.object({
+  items: z.array(UserDataSchema),
   total: z.number().int(),
   limit: z.number().int(),
   skip: z.number().int(),
 });
-
-export type UserList = z.infer<typeof userListSchema>;
-
-// Schema for query parameters
-export const userListQuerySchema = z.object({
-  limit: z.coerce.number().int().nonnegative().default(10),
-  skip: z.coerce.number().int().nonnegative().default(0),
-});
+export type GetUsersResponse = z.infer<typeof GetUsersResponseSchema>;

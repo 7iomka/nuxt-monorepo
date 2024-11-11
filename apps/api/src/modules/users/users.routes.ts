@@ -1,24 +1,27 @@
 import type { FastifyPluginAsyncZod } from 'fastify-type-provider-zod';
 import {
-  userListQuerySchema,
-  userListSchema,
-  userSchema,
-  type UserList,
+  GetUsersResponseSchema,
+  GetUsersQuerySchema,
+  type GetUsersResponse,
+  GetUserByIdParamsSchema,
+  GetUserByIdResponseSchema,
 } from './users.schemas';
-import { z } from 'zod';
+import { normalizeUser, type UserDataFromApi } from './users.lib';
 
 export const usersRoutes: FastifyPluginAsyncZod = async (fastify) => {
   fastify.get(
-    '/list',
+    '',
     {
       schema: {
-        querystring: userListQuerySchema,
+        // operationId: 'getUsers',
+        tags: ['user'],
+        querystring: GetUsersQuerySchema,
         response: {
-          200: userListSchema,
+          200: GetUsersResponseSchema,
         },
       },
     },
-    async (request) => {
+    async (request, reply) => {
       const { limit, skip } = request.query;
 
       const queryParams = new URLSearchParams({
@@ -34,10 +37,10 @@ export const usersRoutes: FastifyPluginAsyncZod = async (fastify) => {
 
       const normalizedUsers = items.map(normalizeUser);
 
-      return {
+      return reply.status(200).send({
         items: normalizedUsers,
         ...data,
-      } satisfies UserList;
+      } satisfies GetUsersResponse);
     },
   );
 
@@ -45,15 +48,15 @@ export const usersRoutes: FastifyPluginAsyncZod = async (fastify) => {
     '/:id',
     {
       schema: {
-        params: z.object({
-          id: z.coerce.number().int(),
-        }),
+        // operationId: 'getUserById',
+        tags: ['user'],
+        params: GetUserByIdParamsSchema,
         response: {
-          200: userSchema,
+          200: GetUserByIdResponseSchema,
         },
       },
     },
-    async (request) => {
+    async (request, reply) => {
       const { id } = request.params;
 
       const queryParams = new URLSearchParams({
@@ -63,7 +66,12 @@ export const usersRoutes: FastifyPluginAsyncZod = async (fastify) => {
       const userResponse = await fetch(
         `https://dummyjson.com/users/${id}?${queryParams.toString()}`,
       );
-      const user = await userResponse.json();
+
+      if (!userResponse.ok) {
+        return reply.notFound('User not found');
+      }
+
+      const user = (await userResponse.json()) as UserDataFromApi;
 
       const normalizedUser = normalizeUser(user);
 
@@ -71,15 +79,3 @@ export const usersRoutes: FastifyPluginAsyncZod = async (fastify) => {
     },
   );
 };
-
-function normalizeUser(user: {
-  id: number;
-  firstName: string;
-  lastName: string;
-  email: string;
-}): z.infer<typeof userSchema> {
-  return {
-    ...user,
-    name: `${user.firstName} ${user.lastName}`,
-  };
-}
