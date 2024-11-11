@@ -1,6 +1,5 @@
 <script lang="ts" setup>
   import { NuxtLink } from '#components';
-  import { useApi } from '@/shared/lib/composables/use-api';
   import {
     Table,
     TableBody,
@@ -10,28 +9,17 @@
   } from '@/shared/ui/table';
   import { Button } from '@/shared/ui/button';
 
-  const { $api } = useNuxtApp();
+  const { $apiClient } = useNuxtApp();
 
-  // import { type User } from '@/shared/types/user';
-  // TODO: Replace with real type from shared packages (like `schemas`, or via generated client)
-  interface User {
-    id: number;
-    email: string;
-    name: string;
-  }
-
-  const { data } = await useApi<{
-    items: User[];
-    total: number;
-    limit: number;
-    offset: number;
-  }>('/users/list');
+  const { data, status } = await useAsyncData('users', async () =>
+    $apiClient.users.getUsers(),
+  );
 </script>
 
 <template>
   <div>
     <h1 class="text-xl mb-6">Users</h1>
-    <Table v-if="data">
+    <Table>
       <TableHeader>
         <TableRow>
           <TableCell>ID</TableCell>
@@ -41,14 +29,26 @@
         </TableRow>
       </TableHeader>
       <TableBody>
-        <TableRow v-for="user in data.items" :key="user.id">
-          <TableCell>{{ user.id }}</TableCell>
-          <TableCell>{{ user.email }}</TableCell>
-          <TableCell>{{ user.name }}</TableCell>
-          <TableCell>
-            <Button :as="NuxtLink" :href="`/users/${user.id}`">View</Button>
-          </TableCell>
-        </TableRow>
+        <template v-if="status === 'pending'">
+          <TableRow>
+            <TableCell colspan="4">Loading...</TableCell>
+          </TableRow>
+        </template>
+        <template v-else-if="data?.items">
+          <TableRow v-for="user in data.items" :key="user.id">
+            <TableCell>{{ user.id }}</TableCell>
+            <TableCell>{{ user.email }}</TableCell>
+            <TableCell>{{ user.name }}</TableCell>
+            <TableCell>
+              <Button :as="NuxtLink" :href="`/users/${user.id}`">View</Button>
+            </TableCell>
+          </TableRow>
+        </template>
+        <template v-else>
+          <TableRow>
+            <TableCell colspan="4">No users found</TableCell>
+          </TableRow>
+        </template>
       </TableBody>
     </Table>
   </div>

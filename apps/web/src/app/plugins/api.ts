@@ -1,14 +1,18 @@
-export default defineNuxtPlugin((nuxtApp) => {
-  const config = useRuntimeConfig();
+import { defineNuxtPlugin } from '#app';
+import { ApiClient } from '@/shared/api/internal/api.gen';
 
-  const api = $fetch.create({
-    baseURL: config.public.apiBase,
+export default defineNuxtPlugin((nuxtApp) => {
+  const customFetch = $fetch.create({
+    baseURL: nuxtApp.$config.public.apiBase,
   });
 
-  // Expose to useNuxtApp().$api
+  const apiClient = new ApiClient({
+    customFetch,
+  });
+
   return {
     provide: {
-      api,
+      apiClient,
     },
   };
 });

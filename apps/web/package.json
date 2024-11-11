@@ -15,13 +15,14 @@
     "prettier-fix": "prettier --write \"**/*.{ts,vue}\"",
     "fixall": "npm-run-all lint-fix prettier-fix",
     "typecheck": "tsc --noEmit",
-    "cssvars": "tsx ./src/shared/config/scripts/generate-global-css-variables.ts"
+    "cssvars": "tsx ./src/shared/config/scripts/generate-global-css-variables.ts",
+    "api": "tsx ./scripts/api-codegen.ts"
   },
   "dependencies": {
-    "@nuxtjs/google-fonts": "^3.2.0",
     "@fancyapps/ui": "^5.0.36",
     "@nuxt/eslint": "^0.5.7",
     "@nuxt/image": "^1.8.0",
+    "@nuxtjs/google-fonts": "^3.2.0",
     "@pinia/nuxt": "^0.5.4",
     "@radix-icons/vue": "^1.0.0",
     "@vee-validate/zod": "^4.13.2",
@@ -49,24 +50,29 @@
     "@nuxtjs/eslint-module": "^4.1.0",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.9",
     "@tailwindcss/typography": "^0.5.15",
     "@types/eslint": "^9",
     "@types/eslint-config-prettier": "^6.11.3",
     "@types/node": "^22.7.7",
+    "@types/pluralize": "^0.0.33",
     "@types/postcss-pxtorem": "^6",
     "autoprefixer": "^10.4.20",
+    "camelcase": "^8.0.0",
     "chokidar": "^4.0.0",
     "deepmerge": "^4.3.1",
+    "dotenv": "^16.4.5",
     "eslint": "^9.10.0",
     "eslint-config-prettier": "^9.1.0",
     "npm-run-all": "^4.1.5",
+    "pluralize": "^8.0.0",
     "postcss-inset": "^1.0.0",
     "postcss-pxtorem": "^6.1.0",
     "prettier": "^3.3.3",
     "prettier-plugin-classnames": "^0.7.2",
+    "swagger-typescript-api": "^13.0.22",
     "tailwindcss": "^3.4.12",
     "tsx": "^4.19.1",
-    "typescript": "^5.6.2",
-    "@tailwindcss/forms": "^0.5.9"
+    "typescript": "^5.6.2"
   }
 }
