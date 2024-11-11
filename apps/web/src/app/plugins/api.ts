@@ -2,12 +2,12 @@ import { defineNuxtPlugin } from '#app';
 import { ApiClient } from '@/shared/api/internal/api.gen';
 
 export default defineNuxtPlugin((nuxtApp) => {
-  const customFetch = $fetch.create({
-    baseURL: nuxtApp.$config.public.apiBase,
-  });
+  // const customNuxtFetch = $fetch.create({
+  //   baseURL: nuxtApp.$config.public.apiBase,
+  // });
 
   const apiClient = new ApiClient({
-    customFetch,
+    baseUrl: nuxtApp.$config.public.apiBase,
   });
 
   return {
