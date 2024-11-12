@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import { useAttrs } from 'vue';
   import { Primitive, type PrimitiveProps } from 'radix-vue';
   import { type ButtonVariants, buttonVariants } from './button.lib';
   import { cn } from '@/shared/lib/cn';
