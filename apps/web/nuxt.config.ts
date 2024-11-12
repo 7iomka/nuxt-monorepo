@@ -67,9 +67,6 @@ export default defineNuxtConfig({
       crawlLinks: true,
       failOnError: false,
     },
-    experimental: {
-      websocket: true,
-    },
   },
 
   tailwindcss: {
