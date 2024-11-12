@@ -9,7 +9,8 @@
     "typecheck": "turbo run typecheck",
     "preinstall": "npx only-allow pnpm",
     "check-updates": "turbo check-updates",
-    "lint:monorepo": "pnpm sherif"
+    "lint:monorepo": "pnpm sherif",
+    "preview": "turbo preview"
   },
   "devDependencies": {
     "@types/node": "^20.17.4",

@@ -1,0 +1,103 @@
+:root {
+  --min-document-width: 22.5rem;
+  --removed-body-scroll-bar-size: var(--fancybox-scrollbar-compensate);
+  --breakpoint-min: 22.5em;
+  --breakpoint-xs: 22.5em;
+  --breakpoint-xsm: 23.4375em;
+  --breakpoint-xsl: 25.875em;
+  --breakpoint-sm: 36em;
+  --breakpoint-smd: 40em;
+  --breakpoint-md: 48em;
+  --breakpoint-lg: 62em;
+  --breakpoint-xl: 75em;
+  --breakpoint-lp: 85.375em;
+  --breakpoint-xxl: 87.5em;
+  --container-max-width: 22.5rem;
+  --container-padding: 1rem;
+  --container-min: 22.5rem;
+  --container-xs: 22.5rem;
+  --container-xsm: 23.4375rem;
+  --container-xsl: 25.875rem;
+  --container-sm: 33.75rem;
+  --container-smd: 33.75rem;
+  --container-md: 45rem;
+  --container-lg: 60rem;
+  --container-xl: 64.375rem;
+  @media (min-width: 22.5em) {
+  --container-max-width: 22.5rem;
+  }
+  @media (min-width: 23.4375em) {
+  --container-max-width: 23.4375rem;
+  }
+  @media (min-width: 25.875em) {
+  --container-max-width: 25.875rem;
+  }
+  @media (min-width: 36em) {
+  --container-max-width: 33.75rem;
+  }
+  @media (min-width: 40em) {
+  --container-max-width: 33.75rem;
+  }
+  @media (min-width: 48em) {
+  --container-max-width: 45rem;
+  --container-padding: 1.5rem;
+  }
+  @media (min-width: 62em) {
+  --container-max-width: 60rem;
+  --container-padding: 2.5rem;
+  }
+  @media (min-width: 75em) {
+  --container-max-width: 64.375rem;
+  }
+  --shadow-xs: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.05), 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 0rem 0.625rem 0.9375rem -0.3125rem, rgba(0, 0, 0, 0.04) 0rem 0.4375rem 0.4375rem -0.3125rem;
+  --shadow-md: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 0rem 1.25rem 1.5625rem -0.3125rem, rgba(0, 0, 0, 0.04) 0rem 0.625rem 0.625rem -0.3125rem;
+  --shadow-lg: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 0rem 1.75rem 1.4375rem -0.4375rem, rgba(0, 0, 0, 0.04) 0rem 0.75rem 0.75rem -0.4375rem;
+  --shadow-xl: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 0rem 2.25rem 1.75rem -0.4375rem, rgba(0, 0, 0, 0.04) 0rem 1.0625rem 1.0625rem -0.4375rem;
+  --shadow-base: 0 0.0625rem 0.5rem rgb(0, 0, 0, 0.06), 0 0.125rem 0.25rem rgb(0, 0, 0, 0.12);
+  --shadow-outline: 0 0 0 0.1875rem rgba(253,177,0,0.6);
+  --shadow-inner: inset 0 0.125rem 0.25rem 0 rgba(0,0,0,0.06);
+  --shadow-none: none;
+  --shadow-2xl: 0 1.5625rem 3.125rem -0.75rem rgba(0, 0, 0, 0.25);
+  --radius: 0.25rem;
+  --radius-none: 0px;
+  --radius-full: 9999px;
+  --radius-sm: 0.125rem;
+  --radius-DEFAULT: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --font-size-xs: 0.75rem;
+  --leading-for-xs: 1rem;
+  --font-size-sm: 0.875rem;
+  --leading-for-sm: 1.25rem;
+  --font-size-base: 1rem;
+  --leading-for-base: 1.5rem;
+  --font-size-lg: 1.125rem;
+  --leading-for-lg: 1.75rem;
+  --font-size-xl: 1.25rem;
+  --leading-for-xl: 1.75rem;
+  --font-size-2xl: 1.5rem;
+  --leading-for-2xl: 2rem;
+  --font-size-3xl: 1.875rem;
+  --leading-for-3xl: 2.25rem;
+  --font-size-4xl: 2.25rem;
+  --leading-for-4xl: 2.5rem;
+  --font-size-5xl: 3rem;
+  --leading-for-5xl: 1;
+  --font-size-6xl: 3.75rem;
+  --leading-for-6xl: 1;
+  --font-size-7xl: 4.5rem;
+  --leading-for-7xl: 1;
+  --font-size-8xl: 6rem;
+  --leading-for-8xl: 1;
+  --font-size-9xl: 8rem;
+  --leading-for-9xl: 1;
+  --font-family-default: Aeonik, Helvetica, sans-serif;
+  --font-family-monospace: Monaco, Courier, monospace;
+  --font-family-serif: georgia, "Times New Roman", times, serif;
+  --font-family-headings: Aeonik, Helvetica, sans-serif;
+}
+
