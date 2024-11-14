@@ -13,8 +13,7 @@ export const GetUserByIdParamsSchema = z.object({
   id: z.coerce.number().int(),
 });
 export type GetUserByIdParams = z.infer<typeof GetUserByIdParamsSchema>;
-export const GetUserByIdBodySchema = UserDataSchema;
-export type GetUserByIdBody = z.infer<typeof GetUserByIdBodySchema>;
+
 export const GetUserByIdResponseSchema = UserDataSchema;
 export type GetUserByIdResponse = z.infer<typeof GetUserByIdResponseSchema>;
 
