@@ -64,5 +64,10 @@
   "[markdown]": {
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true
-},
+  },
+  "eslint.workingDirectories": [
+    { "pattern": "apps/*/" },
+    { "pattern": "packages/*/" }
+  ],
+  "typescript.enablePromptUseWorkspaceTsdk": true,
 }
